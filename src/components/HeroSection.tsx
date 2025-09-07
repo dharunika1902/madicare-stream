@@ -1,5 +1,7 @@
 import { Calendar, UserCheck, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AdminLogin from "@/components/AdminLogin";
+import BookingSearch from "@/components/BookingSearch";
 import heroImage from "@/assets/medical-hero-bg.jpg";
 
 const HeroSection = () => {
@@ -51,21 +53,25 @@ const HeroSection = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-medical hover:opacity-90 transition-opacity text-lg px-8 py-4 pulse-glow"
-                >
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Book Appointment
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="glass hover:glass-subtle border-primary/30 hover:border-primary/50 text-lg px-8 py-4"
-                >
-                  <UserCheck className="mr-2 h-5 w-5" />
-                  Admin Login
-                </Button>
+                <BookingSearch>
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-medical hover:opacity-90 transition-opacity text-lg px-8 py-4 pulse-glow"
+                  >
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Book Appointment
+                  </Button>
+                </BookingSearch>
+                <AdminLogin>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="glass hover:glass-subtle border-primary/30 hover:border-primary/50 text-lg px-8 py-4"
+                  >
+                    <UserCheck className="mr-2 h-5 w-5" />
+                    Admin Login
+                  </Button>
+                </AdminLogin>
               </div>
 
               {/* Stats */}

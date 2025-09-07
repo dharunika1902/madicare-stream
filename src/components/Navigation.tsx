@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Menu, X, Heart, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import AdminLogin from "@/components/AdminLogin";
+import BookingSearch from "@/components/BookingSearch";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,15 +48,19 @@ const Navigation = () => {
           {/* Right side buttons */}
           <div className="flex items-center space-x-3">
             <ThemeToggle />
-            <Button 
-              variant="outline" 
-              className="hidden sm:inline-flex glass hover:glass-subtle border-primary/20 hover:border-primary/40"
-            >
-              Admin Login
-            </Button>
-            <Button className="bg-gradient-medical hover:opacity-90 transition-opacity">
-              Book Now
-            </Button>
+            <AdminLogin>
+              <Button 
+                variant="outline" 
+                className="hidden sm:inline-flex glass hover:glass-subtle border-primary/20 hover:border-primary/40"
+              >
+                Admin Login
+              </Button>
+            </AdminLogin>
+            <BookingSearch>
+              <Button className="bg-gradient-medical hover:opacity-90 transition-opacity">
+                Book Now
+              </Button>
+            </BookingSearch>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -85,10 +91,17 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <div className="px-3 py-2">
-              <Button variant="outline" className="w-full mb-2 glass">
-                Admin Login
-              </Button>
+            <div className="px-3 py-2 space-y-2">
+              <AdminLogin>
+                <Button variant="outline" className="w-full glass">
+                  Admin Login
+                </Button>
+              </AdminLogin>
+              <BookingSearch>
+                <Button className="w-full bg-gradient-medical hover:opacity-90 transition-opacity">
+                  Book Now
+                </Button>
+              </BookingSearch>
             </div>
           </div>
         </div>
